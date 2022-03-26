@@ -1,0 +1,433 @@
+/* Reset CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+/*********************************** header *********************************/
+
+header {
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9); /*opcity會讓整個子元素變透明所以用rgba*/
+  z-index: 999;
+}
+
+.header-wrapper {
+  height: 50px;
+  display: grid;
+  grid-template-areas: ". search . .  brand brand brand . like cart";
+  grid-template-rows: 50px;
+  justify-items: center;
+  align-items: center;
+}
+
+.search-btn {
+  grid-area: search;
+  font-size: 25px;
+}
+
+.header-brand {
+  grid-area: brand;
+}
+
+.like-btn {
+  grid-area: like;
+  font-size: 25px;
+}
+
+.cart-btn {
+  grid-area: cart;
+  font-size: 25px;
+}
+
+.logo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-brand-img {
+  height: 50px;
+}
+
+.header-brand-text {
+  font-size: 20px;
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.header-category {
+  display: none;
+}
+
+/************************************* selector ********************************/
+
+.selector {
+  padding-top: 100px;
+}
+
+.selector-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selector-title {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+}
+
+.selectors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%;
+}
+
+select {
+  width: 35%;
+  padding: 12px;
+  margin: 0 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/**************************************** goods **********************************/
+
+.card-wrapper {
+  width: 90%;
+  margin: 1rem 5%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+}
+
+.card:hover .card-real-img {
+  opacity: 1;
+}
+
+.card:hover .card-img {
+  opacity: 0;
+}
+
+.card-pic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card-real-img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.card-img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+.card-like-btn {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  font-size: 17px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.card-text {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.card-title {
+  font-size: 15px;
+}
+
+.card-price {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.card-price span {
+  text-decoration: line-through;
+  font-weight: normal;
+}
+
+/************************************** pagination ***********************************/
+
+.pagination {
+  margin: 100px auto;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+/************************************* banner ******************************/
+
+.banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-wrapper {
+  width: 100%;
+  height: 220px;
+  background-image: url("https://assets-lighthouse.alphacamp.co/uploads/image/file/14376/template.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.sign-up {
+  margin: 30px;
+  width: 70%;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+}
+
+.sign-up-input {
+  width: 70%;
+  height: 100%;
+  border: 0;
+  border-radius: 30px 0 0 30px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.sign-up-btn {
+  width: 30%;
+  height: 100%;
+  border: 0;
+  border-radius: 0 30px 30px 0;
+  background: black;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.policy {
+  font-size: 14px;
+}
+
+.policy span {
+  text-decoration: underline;
+}
+
+/******************************************* footer **********************************/
+
+footer {
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  background: #f0f0f0;
+  font-size: 12px;
+}
+
+/************************************** media query *******************************/
+
+@media screen and (min-width: 768px) {
+  .header-wrapper {
+    grid-template-areas: "brand . category category category category category category . .  search like cart";
+  }
+
+  .header-category {
+    height: 100%;
+    display: flex;
+    grid-area: category;
+    align-items: center;
+  }
+
+  .category-item {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 5rem;
+  }
+
+  .search-btn {
+    grid-area: search;
+  }
+
+  .like-cart-btn {
+    grid-area: like-cart;
+  }
+
+  select {
+    width: 20%;
+  }
+
+  .card-wrapper {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+
+  .banner-wrapper {
+    width: 80%;
+  }
+
+  .sign-up {
+    width: 50%;
+    height: 40px;
+  }
+}
